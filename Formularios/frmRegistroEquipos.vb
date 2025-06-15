@@ -10,7 +10,8 @@ Public Class frmEquipos
         btnEditar.Enabled = False
         btnEliminar.Enabled = False
         btnCancelar.Enabled = False
-        btnBuscar.Enabled = True
+        'btnBuscar.Enabled = True
+        btnUsuario.Enabled = True
 
         txtNombreEquipo.Enabled = False
         txtTipoEquipo.Enabled = False
@@ -30,6 +31,7 @@ Public Class frmEquipos
         btnEditar.Enabled = False
         btnEliminar.Enabled = False
         btnCancelar.Enabled = True
+        btnUsuario.Enabled = False
 
         txtNombreEquipo.Enabled = True
         txtTipoEquipo.Enabled = True
@@ -432,6 +434,10 @@ Public Class frmEquipos
         EliminarEquipo()
         DesactivarControlles()
         LlenarDatos()
+    End Sub
+
+    Private Sub btnUsuario_Click(sender As Object, e As EventArgs) Handles btnUsuario.Click
+        frmUsuarios.ShowDialog()
     End Sub
 End Class
 

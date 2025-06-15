@@ -37,7 +37,6 @@ Partial Class frmEquipos
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.cbxIdDepartamento = New System.Windows.Forms.ComboBox()
         Me.cbxIdUsuarioAsignado = New System.Windows.Forms.ComboBox()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -61,6 +60,7 @@ Partial Class frmEquipos
         Me.activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_departamento_area = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_usuario_encargado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnUsuario = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvEquipos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -148,7 +148,7 @@ Partial Class frmEquipos
         'txtNombreEquipo
         '
         Me.txtNombreEquipo.Location = New System.Drawing.Point(176, 42)
-        Me.txtNombreEquipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombreEquipo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombreEquipo.Name = "txtNombreEquipo"
         Me.txtNombreEquipo.Size = New System.Drawing.Size(287, 22)
         Me.txtNombreEquipo.TabIndex = 7
@@ -156,7 +156,7 @@ Partial Class frmEquipos
         'txtTipoEquipo
         '
         Me.txtTipoEquipo.Location = New System.Drawing.Point(176, 96)
-        Me.txtTipoEquipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTipoEquipo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTipoEquipo.Name = "txtTipoEquipo"
         Me.txtTipoEquipo.Size = New System.Drawing.Size(287, 22)
         Me.txtTipoEquipo.TabIndex = 8
@@ -164,7 +164,7 @@ Partial Class frmEquipos
         'txtSerial
         '
         Me.txtSerial.Location = New System.Drawing.Point(176, 143)
-        Me.txtSerial.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSerial.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSerial.Name = "txtSerial"
         Me.txtSerial.Size = New System.Drawing.Size(287, 22)
         Me.txtSerial.TabIndex = 9
@@ -172,7 +172,7 @@ Partial Class frmEquipos
         'dtpFechaIngresoEquipo
         '
         Me.dtpFechaIngresoEquipo.Location = New System.Drawing.Point(32, 369)
-        Me.dtpFechaIngresoEquipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpFechaIngresoEquipo.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpFechaIngresoEquipo.Name = "dtpFechaIngresoEquipo"
         Me.dtpFechaIngresoEquipo.Size = New System.Drawing.Size(431, 22)
         Me.dtpFechaIngresoEquipo.TabIndex = 11
@@ -181,7 +181,7 @@ Partial Class frmEquipos
         '
         Me.CheckActivo.AutoSize = True
         Me.CheckActivo.Location = New System.Drawing.Point(176, 201)
-        Me.CheckActivo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CheckActivo.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckActivo.Name = "CheckActivo"
         Me.CheckActivo.Size = New System.Drawing.Size(66, 20)
         Me.CheckActivo.TabIndex = 13
@@ -191,7 +191,7 @@ Partial Class frmEquipos
         'txtID
         '
         Me.txtID.Location = New System.Drawing.Point(1219, 594)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(39, 22)
         Me.txtID.TabIndex = 15
@@ -203,7 +203,7 @@ Partial Class frmEquipos
         Me.cbxIdDepartamento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbxIdDepartamento.FormattingEnabled = True
         Me.cbxIdDepartamento.Location = New System.Drawing.Point(32, 257)
-        Me.cbxIdDepartamento.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbxIdDepartamento.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxIdDepartamento.Name = "cbxIdDepartamento"
         Me.cbxIdDepartamento.Size = New System.Drawing.Size(217, 24)
         Me.cbxIdDepartamento.TabIndex = 16
@@ -214,23 +214,10 @@ Partial Class frmEquipos
         Me.cbxIdUsuarioAsignado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbxIdUsuarioAsignado.FormattingEnabled = True
         Me.cbxIdUsuarioAsignado.Location = New System.Drawing.Point(263, 257)
-        Me.cbxIdUsuarioAsignado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbxIdUsuarioAsignado.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxIdUsuarioAsignado.Name = "cbxIdUsuarioAsignado"
         Me.cbxIdUsuarioAsignado.Size = New System.Drawing.Size(200, 24)
         Me.cbxIdUsuarioAsignado.TabIndex = 17
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBuscar.Location = New System.Drawing.Point(492, 546)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(91, 43)
-        Me.btnBuscar.TabIndex = 31
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
@@ -321,7 +308,7 @@ Partial Class frmEquipos
         '
         Me.rbInactivo.AutoSize = True
         Me.rbInactivo.Location = New System.Drawing.Point(535, 25)
-        Me.rbInactivo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbInactivo.Margin = New System.Windows.Forms.Padding(4)
         Me.rbInactivo.Name = "rbInactivo"
         Me.rbInactivo.Size = New System.Drawing.Size(120, 20)
         Me.rbInactivo.TabIndex = 9
@@ -332,7 +319,7 @@ Partial Class frmEquipos
         '
         Me.rbActivo.AutoSize = True
         Me.rbActivo.Location = New System.Drawing.Point(404, 23)
-        Me.rbActivo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbActivo.Margin = New System.Windows.Forms.Padding(4)
         Me.rbActivo.Name = "rbActivo"
         Me.rbActivo.Size = New System.Drawing.Size(111, 20)
         Me.rbActivo.TabIndex = 8
@@ -343,7 +330,7 @@ Partial Class frmEquipos
         '
         Me.rbidUsuario.AutoSize = True
         Me.rbidUsuario.Location = New System.Drawing.Point(276, 22)
-        Me.rbidUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbidUsuario.Margin = New System.Windows.Forms.Padding(4)
         Me.rbidUsuario.Name = "rbidUsuario"
         Me.rbidUsuario.Size = New System.Drawing.Size(89, 20)
         Me.rbidUsuario.TabIndex = 7
@@ -354,7 +341,7 @@ Partial Class frmEquipos
         '
         Me.rbDepartamento.AutoSize = True
         Me.rbDepartamento.Location = New System.Drawing.Point(135, 23)
-        Me.rbDepartamento.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbDepartamento.Margin = New System.Windows.Forms.Padding(4)
         Me.rbDepartamento.Name = "rbDepartamento"
         Me.rbDepartamento.Size = New System.Drawing.Size(114, 20)
         Me.rbDepartamento.TabIndex = 6
@@ -365,7 +352,7 @@ Partial Class frmEquipos
         '
         Me.rbEquipo.AutoSize = True
         Me.rbEquipo.Location = New System.Drawing.Point(20, 23)
-        Me.rbEquipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbEquipo.Margin = New System.Windows.Forms.Padding(4)
         Me.rbEquipo.Name = "rbEquipo"
         Me.rbEquipo.Size = New System.Drawing.Size(102, 20)
         Me.rbEquipo.TabIndex = 5
@@ -490,14 +477,24 @@ Partial Class frmEquipos
         Me.id_usuario_encargado.ReadOnly = True
         Me.id_usuario_encargado.Width = 130
         '
+        'btnUsuario
+        '
+        Me.btnUsuario.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsuario.Location = New System.Drawing.Point(390, 201)
+        Me.btnUsuario.Name = "btnUsuario"
+        Me.btnUsuario.Size = New System.Drawing.Size(73, 28)
+        Me.btnUsuario.TabIndex = 34
+        Me.btnUsuario.Text = "..."
+        Me.btnUsuario.UseVisualStyleBackColor = True
+        '
         'frmEquipos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GrayText
         Me.ClientSize = New System.Drawing.Size(1423, 618)
+        Me.Controls.Add(Me.btnUsuario)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnEditar)
@@ -518,7 +515,7 @@ Partial Class frmEquipos
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmEquipos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestion de Equipos"
@@ -545,7 +542,6 @@ Partial Class frmEquipos
     Friend WithEvents txtID As TextBox
     Friend WithEvents cbxIdDepartamento As ComboBox
     Friend WithEvents cbxIdUsuarioAsignado As ComboBox
-    Friend WithEvents btnBuscar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnEditar As Button
@@ -569,4 +565,5 @@ Partial Class frmEquipos
     Friend WithEvents rbDepartamento As RadioButton
     Friend WithEvents rbEquipo As RadioButton
     Friend WithEvents rbInactivo As RadioButton
+    Friend WithEvents btnUsuario As Button
 End Class
