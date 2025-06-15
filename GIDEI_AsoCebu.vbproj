@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionDB\ConectarDB.vb" />
+    <Compile Include="Formularios\frmRegistroEquipos.Designer.vb">
+      <DependentUpon>frmRegistroEquipos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRegistroEquipos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmConfiguracion.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRegistroEquipos.resx">
+      <DependentUpon>frmRegistroEquipos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.vb</DependentUpon>

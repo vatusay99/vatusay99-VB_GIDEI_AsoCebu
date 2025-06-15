@@ -74,7 +74,7 @@ Partial Class frmDepartamento
         '
         'txtDepartamento
         '
-        Me.txtDepartamento.Location = New System.Drawing.Point(102, 19)
+        Me.txtDepartamento.Location = New System.Drawing.Point(92, 19)
         Me.txtDepartamento.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDepartamento.Name = "txtDepartamento"
         Me.txtDepartamento.Size = New System.Drawing.Size(301, 20)
@@ -171,7 +171,7 @@ Partial Class frmDepartamento
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(102, 63)
+        Me.txtDescripcion.Location = New System.Drawing.Point(92, 63)
         Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
