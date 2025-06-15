@@ -263,6 +263,67 @@ Public Class frmEquipos
             End If
         End If
     End Sub
+
+    Sub EditarEquipo()
+        Dim id As Integer
+        Dim estadoEquipo As String
+        If txtID.Text = "" Then
+            MsgBox("Existen campos vacios", vbInformation, "Sistema de inventario")
+        Else
+            Dim sql As String
+            If CheckActivo.Checked Then
+                estadoEquipo = "Activo"
+            Else
+                estadoEquipo = "Inactivo"
+            End If
+            Try
+                'pendiente agregar campo fecha
+                sql = "UPDATE t_registro_de_equipos SET nombre = '" & txtNombreEquipo.Text & "'
+                   , tipo = '" & txtTipoEquipo.Text & "'
+                   , serial = '" & txtSerial.Text & "'
+                   , id_departamento_area = " & cbxIdDepartamento.Text & "
+                   , activo = '" & estadoEquipo & "'
+                   , id_usuario_encargado = " & cbxIdUsuarioAsignado.Text & "
+                   WHERE id_equipo = " & txtID.Text & ""
+
+                Dim conect As New SqlConnection(obtenerConexion)
+                conect.Open()
+                Using comando As New SqlCommand(sql, conect)
+                    id = comando.ExecuteScalar()
+                End Using
+                conect.Close()
+                MsgBox("Registro editado exitosamnete.", vbInformation, "Sistema de inventario")
+                LimpiarControles()
+            Catch ex As Exception
+                MsgBox("Se ha detectado el siguiente error" + ex.ToString + " Sistema Inventario")
+            End Try
+        End If
+    End Sub
+
+    Sub EliminarEquipo()
+        Dim id As Integer
+        If txtID.Text = "" Then
+            MsgBox("Existen campos vacios", vbInformation, "Sistema de inventario")
+        Else
+            If MsgBox("Esta seguro que desea eliminar el registro: " + Trim(txtNombreEquipo.Text) + " !!", vbQuestion + vbYesNo, "Sistema de inventario") = vbNo Then
+                LimpiarControles()
+                DesactivarControlles()
+                Exit Sub
+            Else
+                Dim sql As String
+                sql = "DELETE FROM t_registro_de_equipos WHERE id_equipo = " & Trim(txtID.Text)
+                Dim conect As New SqlConnection(obtenerConexion)
+                conect.Open()
+                Using comando As New SqlCommand(sql, conect)
+                    id = comando.ExecuteScalar()
+
+                End Using
+                conect.Close()
+                MsgBox("Registro Eliminado exitosamnete.", vbInformation, "Sistema de inventario")
+                LimpiarControles()
+            End If
+        End If
+    End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         ActivarControlles()
     End Sub
@@ -270,6 +331,7 @@ Public Class frmEquipos
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         InsertarEquipo()
+        LlenarDatos()
         DesactivarControlles()
         LimpiarControles()
 
@@ -316,4 +378,60 @@ Public Class frmEquipos
             End If
         End If
     End Sub
+
+    Private Sub dgvEquipos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEquipos.CellDoubleClick
+        On Error Resume Next
+        txtID.Text = CStr(dgvEquipos.Item("id_equipo", dgvEquipos.CurrentCell.RowIndex).Value)
+        txtNombreEquipo.Text = CStr(dgvEquipos.Item("nombre", dgvEquipos.CurrentCell.RowIndex).Value)
+        txtTipoEquipo.Text = CStr(dgvEquipos.Item("tipo", dgvEquipos.CurrentCell.RowIndex).Value)
+        txtSerial.Text = CStr(dgvEquipos.Item("serial", dgvEquipos.CurrentCell.RowIndex).Value)
+        cbxIdDepartamento.Text = CStr(dgvEquipos.Item("id_departamento_area", dgvEquipos.CurrentCell.RowIndex).Value)
+        cbxIdUsuarioAsignado.Text = CStr(dgvEquipos.Item("id_usuario_encargado", dgvEquipos.CurrentCell.RowIndex).Value)
+        dtpFechaIngresoEquipo.Text = CStr(dgvEquipos.Item("fecha_ingreso", dgvEquipos.CurrentCell.RowIndex).Value)
+        If dgvEquipos.Item("activo", dgvEquipos.CurrentCell.RowIndex).Value = "Activo" Then
+            CheckActivo.Checked = True
+        Else
+            CheckActivo.Checked = False
+        End If
+
+        btnCancelar.Enabled = True
+        btnEditar.Enabled = True
+        btnEliminar.Enabled = True
+        btnNuevo.Enabled = True
+
+        txtNombreEquipo.Enabled = True
+        txtTipoEquipo.Enabled = True
+        txtSerial.Enabled = True
+        dtpFechaIngresoEquipo.Enabled = True
+        CheckActivo.Enabled = True
+
+        txtNombreEquipo.Focus()
+    End Sub
+
+    Private Sub rbEquipo_CheckedChanged(sender As Object, e As EventArgs) Handles rbEquipo.CheckedChanged
+        txtBuscar.Focus()
+    End Sub
+
+    Private Sub rbDepartamento_CheckedChanged(sender As Object, e As EventArgs) Handles rbDepartamento.CheckedChanged
+        txtBuscar.Focus()
+
+    End Sub
+
+    Private Sub rbidUsuario_CheckedChanged(sender As Object, e As EventArgs) Handles rbidUsuario.CheckedChanged
+        txtBuscar.Focus()
+
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        EditarEquipo()
+        DesactivarControlles()
+        LlenarDatos()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        EliminarEquipo()
+        DesactivarControlles()
+        LlenarDatos()
+    End Sub
 End Class
+
