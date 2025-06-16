@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmEquipos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmEquipos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -61,6 +61,7 @@ Partial Class frmEquipos
         Me.id_departamento_area = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_usuario_encargado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUsuario = New System.Windows.Forms.Button()
+        Me.btnDepartamento = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvEquipos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -102,7 +103,7 @@ Partial Class frmEquipos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(28, 347)
+        Me.Label4.Location = New System.Drawing.Point(28, 388)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(126, 19)
@@ -125,7 +126,7 @@ Partial Class frmEquipos
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Chartreuse
-        Me.Label6.Location = New System.Drawing.Point(28, 233)
+        Me.Label6.Location = New System.Drawing.Point(28, 266)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(148, 19)
@@ -138,7 +139,7 @@ Partial Class frmEquipos
         Me.Label7.BackColor = System.Drawing.SystemColors.GrayText
         Me.Label7.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Chartreuse
-        Me.Label7.Location = New System.Drawing.Point(259, 235)
+        Me.Label7.Location = New System.Drawing.Point(247, 268)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(181, 19)
@@ -171,7 +172,9 @@ Partial Class frmEquipos
         '
         'dtpFechaIngresoEquipo
         '
-        Me.dtpFechaIngresoEquipo.Location = New System.Drawing.Point(32, 369)
+        Me.dtpFechaIngresoEquipo.CustomFormat = """yyyy-MM-dd"""
+        Me.dtpFechaIngresoEquipo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaIngresoEquipo.Location = New System.Drawing.Point(32, 410)
         Me.dtpFechaIngresoEquipo.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpFechaIngresoEquipo.Name = "dtpFechaIngresoEquipo"
         Me.dtpFechaIngresoEquipo.Size = New System.Drawing.Size(431, 22)
@@ -202,10 +205,10 @@ Partial Class frmEquipos
         Me.cbxIdDepartamento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cbxIdDepartamento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbxIdDepartamento.FormattingEnabled = True
-        Me.cbxIdDepartamento.Location = New System.Drawing.Point(32, 257)
+        Me.cbxIdDepartamento.Location = New System.Drawing.Point(32, 287)
         Me.cbxIdDepartamento.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxIdDepartamento.Name = "cbxIdDepartamento"
-        Me.cbxIdDepartamento.Size = New System.Drawing.Size(217, 24)
+        Me.cbxIdDepartamento.Size = New System.Drawing.Size(210, 24)
         Me.cbxIdDepartamento.TabIndex = 16
         '
         'cbxIdUsuarioAsignado
@@ -213,10 +216,10 @@ Partial Class frmEquipos
         Me.cbxIdUsuarioAsignado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cbxIdUsuarioAsignado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbxIdUsuarioAsignado.FormattingEnabled = True
-        Me.cbxIdUsuarioAsignado.Location = New System.Drawing.Point(263, 257)
+        Me.cbxIdUsuarioAsignado.Location = New System.Drawing.Point(250, 288)
         Me.cbxIdUsuarioAsignado.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxIdUsuarioAsignado.Name = "cbxIdUsuarioAsignado"
-        Me.cbxIdUsuarioAsignado.Size = New System.Drawing.Size(200, 24)
+        Me.cbxIdUsuarioAsignado.Size = New System.Drawing.Size(228, 24)
         Me.cbxIdUsuarioAsignado.TabIndex = 17
         '
         'btnCancelar
@@ -480,12 +483,22 @@ Partial Class frmEquipos
         'btnUsuario
         '
         Me.btnUsuario.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUsuario.Location = New System.Drawing.Point(390, 201)
+        Me.btnUsuario.Location = New System.Drawing.Point(443, 257)
         Me.btnUsuario.Name = "btnUsuario"
-        Me.btnUsuario.Size = New System.Drawing.Size(73, 28)
+        Me.btnUsuario.Size = New System.Drawing.Size(35, 28)
         Me.btnUsuario.TabIndex = 34
         Me.btnUsuario.Text = "..."
         Me.btnUsuario.UseVisualStyleBackColor = True
+        '
+        'btnDepartamento
+        '
+        Me.btnDepartamento.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDepartamento.Location = New System.Drawing.Point(184, 258)
+        Me.btnDepartamento.Name = "btnDepartamento"
+        Me.btnDepartamento.Size = New System.Drawing.Size(58, 28)
+        Me.btnDepartamento.TabIndex = 35
+        Me.btnDepartamento.Text = "..."
+        Me.btnDepartamento.UseVisualStyleBackColor = True
         '
         'frmEquipos
         '
@@ -493,6 +506,7 @@ Partial Class frmEquipos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GrayText
         Me.ClientSize = New System.Drawing.Size(1423, 618)
+        Me.Controls.Add(Me.btnDepartamento)
         Me.Controls.Add(Me.btnUsuario)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnCancelar)
@@ -566,4 +580,5 @@ Partial Class frmEquipos
     Friend WithEvents rbEquipo As RadioButton
     Friend WithEvents rbInactivo As RadioButton
     Friend WithEvents btnUsuario As Button
+    Friend WithEvents btnDepartamento As Button
 End Class

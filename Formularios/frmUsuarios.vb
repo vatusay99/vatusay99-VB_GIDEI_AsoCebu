@@ -124,17 +124,30 @@ Public Class frmUsuarios
                 LimpiarControles()
                 Exit Sub
             Else
-                Dim sql As String
-                sql = "DELETE FROM t_usuarios WHERE id_usuario = " & Trim(txtId.Text)
-                Dim conect As New SqlConnection(obtenerConexion)
-                conect.Open()
-                Using comando As New SqlCommand(sql, conect)
-                    id = comando.ExecuteScalar()
+                Try
+                    MsgBox("SELECT * FROM t_registro_de_equipos WHERE id_usuario_encargado = '" & txtId.Text & "'", vbInformation, "Consulta tabla referencial")
+                    adaptador = New SqlDataAdapter("SELECT * FROM t_registro_de_equipos WHERE id_usuario_encargado = '" & txtId.Text & "'", obtenerConexion)
+                    tabla.Clear()
+                    adaptador.Fill(tabla)
+                    If tabla.Rows.Count > 0 Then
+                        txtUsuario.Text = tabla.Rows(0).Item("nombre")
+                        MsgBox("El Usuario: con id: '" & txtId.Text & "' tiene un equipo asignado: '" & txtUsuario.Text & "' asi que se debe Eliminar este registro primero.", vbInformation, "Sistema Inventario")
+                        Exit Sub
+                    End If
+                    Dim sql As String
+                    sql = "DELETE FROM t_usuarios WHERE id_usuario = " & Trim(txtId.Text)
+                    Dim conect As New SqlConnection(obtenerConexion)
+                    conect.Open()
+                    Using comando As New SqlCommand(sql, conect)
+                        id = comando.ExecuteScalar()
+                    End Using
+                    conect.Close()
+                    MsgBox("Registro Eliminado exitosamnete.", vbInformation, "Sistema de inventario")
+                    LimpiarControles()
+                Catch ex As Exception
+                    MsgBox("Se ha detectado el siguiente error" + ex.ToString + " Sistema Inventario")
+                End Try
 
-                End Using
-                conect.Close()
-                MsgBox("Registro Eliminado exitosamnete.", vbInformation, "Sistema de inventario")
-                LimpiarControles()
             End If
         End If
     End Sub

@@ -53,4 +53,8 @@ Public Class frmPrincipal
             MsgBox("No tiene los privilegios para este Modulo", vbInformation, "Operacion Cancelada")
         End If
     End Sub
+
+    Private Sub RegistroDeEquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroDeEquiposToolStripMenuItem.Click
+        frmEquipos.Show()
+    End Sub
 End Class

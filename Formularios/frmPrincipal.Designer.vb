@@ -28,6 +28,8 @@ Partial Class frmPrincipal
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,8 +57,7 @@ Partial Class frmPrincipal
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ModulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroDeEquiposToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -69,7 +70,7 @@ Partial Class frmPrincipal
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(1281, 28)
+        Me.MenuStrip.Size = New System.Drawing.Size(1512, 28)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -84,8 +85,21 @@ Partial Class frmPrincipal
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(121, 26)
         Me.ExitToolStripMenuItem.Text = "&Salir"
+        '
+        'ModulosToolStripMenuItem
+        '
+        Me.ModulosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.RegistroDeEquiposToolStripMenuItem})
+        Me.ModulosToolStripMenuItem.Name = "ModulosToolStripMenuItem"
+        Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(81, 24)
+        Me.ModulosToolStripMenuItem.Text = "Modulos"
+        '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(225, 26)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'ViewMenu
         '
@@ -122,19 +136,19 @@ Partial Class frmPrincipal
         'TileVerticalToolStripMenuItem
         '
         Me.TileVerticalToolStripMenuItem.Name = "TileVerticalToolStripMenuItem"
-        Me.TileVerticalToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.TileVerticalToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
         Me.TileVerticalToolStripMenuItem.Text = "Mosaico &vertical"
         '
         'TileHorizontalToolStripMenuItem
         '
         Me.TileHorizontalToolStripMenuItem.Name = "TileHorizontalToolStripMenuItem"
-        Me.TileHorizontalToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.TileHorizontalToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
         Me.TileHorizontalToolStripMenuItem.Text = "Mosaico &horizontal"
         '
         'CloseAllToolStripMenuItem
         '
         Me.CloseAllToolStripMenuItem.Name = "CloseAllToolStripMenuItem"
-        Me.CloseAllToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.CloseAllToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
         Me.CloseAllToolStripMenuItem.Text = "C&errar todo"
         '
         'HelpMenu
@@ -148,7 +162,7 @@ Partial Class frmPrincipal
         '
         Me.ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
         Me.ContentsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(218, 26)
         Me.ContentsToolStripMenuItem.Text = "&Contenido"
         '
         'SearchToolStripMenuItem
@@ -156,18 +170,18 @@ Partial Class frmPrincipal
         Me.SearchToolStripMenuItem.Image = CType(resources.GetObject("SearchToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SearchToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(218, 26)
         Me.SearchToolStripMenuItem.Text = "&Buscar"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(221, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(215, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(218, 26)
         Me.AboutToolStripMenuItem.Text = "&Acerca de..."
         '
         'ToolStrip
@@ -176,7 +190,7 @@ Partial Class frmPrincipal
         Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.OpenToolStripButton, Me.SaveToolStripButton, Me.ToolStripSeparator1, Me.PrintToolStripButton, Me.PrintPreviewToolStripButton, Me.ToolStripSeparator2, Me.HelpToolStripButton})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 28)
         Me.ToolStrip.Name = "ToolStrip"
-        Me.ToolStrip.Size = New System.Drawing.Size(1281, 27)
+        Me.ToolStrip.Size = New System.Drawing.Size(1512, 27)
         Me.ToolStrip.TabIndex = 6
         Me.ToolStrip.Text = "ToolStrip"
         '
@@ -248,10 +262,10 @@ Partial Class frmPrincipal
         '
         Me.StatusStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel, Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 611)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 947)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip.Size = New System.Drawing.Size(1281, 26)
+        Me.StatusStrip.Size = New System.Drawing.Size(1512, 26)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
@@ -279,24 +293,17 @@ Partial Class frmPrincipal
         Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(153, 20)
         Me.ToolStripStatusLabel3.Text = "ToolStripStatusLabel3"
         '
-        'ModulosToolStripMenuItem
+        'RegistroDeEquiposToolStripMenuItem
         '
-        Me.ModulosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem})
-        Me.ModulosToolStripMenuItem.Name = "ModulosToolStripMenuItem"
-        Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(81, 24)
-        Me.ModulosToolStripMenuItem.Text = "Modulos"
-        '
-        'UsuariosToolStripMenuItem
-        '
-        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
-        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        Me.RegistroDeEquiposToolStripMenuItem.Name = "RegistroDeEquiposToolStripMenuItem"
+        Me.RegistroDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(225, 26)
+        Me.RegistroDeEquiposToolStripMenuItem.Text = "Registro de Equipos"
         '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1281, 637)
+        Me.ClientSize = New System.Drawing.Size(1512, 973)
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
@@ -348,4 +355,5 @@ Partial Class frmPrincipal
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents ModulosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RegistroDeEquiposToolStripMenuItem As ToolStripMenuItem
 End Class

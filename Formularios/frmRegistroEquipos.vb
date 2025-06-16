@@ -78,6 +78,7 @@ Public Class frmEquipos
         Dim id_Usuario As Integer
         Dim sqlIdUser As String
         Dim estadoActivo As String
+        Dim fechaSeleccionada As String
 
         If MsgBox("Guardar nuevo Registro", vbQuestion + vbYesNo, "Sistema de inventario") = vbNo Then
             Exit Sub
@@ -100,6 +101,8 @@ Public Class frmEquipos
             MsgBox("El usuario '" & cbxIdUsuarioAsignado.Text & "' ya tiene un equipo asignado en base de datos", vbCritical, "Sistema Inventario - Accion no permitida")
             Exit Sub
         End If
+
+        fechaSeleccionada = dtpFechaIngresoEquipo.Value.ToString("yyyy-MM-dd")
 
         If CheckActivo.Checked Then
             estadoActivo = "Activo"
@@ -124,7 +127,7 @@ Public Class frmEquipos
                     ,'" & txtTipoEquipo.Text & "'
                     ,'" & txtSerial.Text & "'
                     ,'" & cbxIdDepartamento.SelectedValue & "'
-                    ,''
+                    ,'" & fechaSeleccionada & "'
                     ,'" & estadoActivo & "'
                     ,'" & cbxIdUsuarioAsignado.SelectedValue & "')"
 
@@ -269,6 +272,8 @@ Public Class frmEquipos
     Sub EditarEquipo()
         Dim id As Integer
         Dim estadoEquipo As String
+        Dim fechaSeleccionada As String = dtpFechaIngresoEquipo.Value.ToString("yyyy-MM-dd")
+
         If txtID.Text = "" Then
             MsgBox("Existen campos vacios", vbInformation, "Sistema de inventario")
         Else
@@ -437,7 +442,23 @@ Public Class frmEquipos
     End Sub
 
     Private Sub btnUsuario_Click(sender As Object, e As EventArgs) Handles btnUsuario.Click
-        frmUsuarios.ShowDialog()
+        If UCase(tipoUsuario) = "ADMIN" Then
+            frmUsuarios.ShowDialog()
+        Else
+            MsgBox("No tiene los privilegios para este Modulo", vbInformation, "Operacion Cancelada")
+        End If
+    End Sub
+
+    Private Sub cbxIdUsuarioAsignado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxIdUsuarioAsignado.SelectedIndexChanged
+        listarUsuarios()
+    End Sub
+
+    Private Sub btnDepartamento_Click(sender As Object, e As EventArgs) Handles btnDepartamento.Click
+        frmDepartamento.ShowDialog()
+    End Sub
+
+    Private Sub cbxIdDepartamento_DropDown(sender As Object, e As EventArgs) Handles cbxIdDepartamento.DropDown
+        MostrarDepartamento()
     End Sub
 End Class
 

@@ -103,7 +103,7 @@ Partial Class frmUsuarios
         '
         Me.txtNombre.Location = New System.Drawing.Point(165, 30)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(323, 22)
+        Me.txtNombre.Size = New System.Drawing.Size(179, 22)
         Me.txtNombre.TabIndex = 5
         '
         'txtUsuario
@@ -140,7 +140,7 @@ Partial Class frmUsuarios
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(16, 305)
+        Me.btnNuevo.Location = New System.Drawing.Point(16, 285)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 43)
         Me.btnNuevo.TabIndex = 10
@@ -149,7 +149,7 @@ Partial Class frmUsuarios
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(109, 305)
+        Me.btnGuardar.Location = New System.Drawing.Point(17, 331)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 43)
         Me.btnGuardar.TabIndex = 11
@@ -159,7 +159,7 @@ Partial Class frmUsuarios
         '
         'btnEditar
         '
-        Me.btnEditar.Location = New System.Drawing.Point(204, 305)
+        Me.btnEditar.Location = New System.Drawing.Point(165, 285)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 43)
         Me.btnEditar.TabIndex = 12
@@ -168,7 +168,7 @@ Partial Class frmUsuarios
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(303, 305)
+        Me.btnEliminar.Location = New System.Drawing.Point(165, 331)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 43)
         Me.btnEliminar.TabIndex = 13
@@ -177,7 +177,7 @@ Partial Class frmUsuarios
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(406, 305)
+        Me.btnCancelar.Location = New System.Drawing.Point(263, 285)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(81, 43)
         Me.btnCancelar.TabIndex = 14
@@ -191,16 +191,16 @@ Partial Class frmUsuarios
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.dgbUsuarios)
-        Me.Panel1.Location = New System.Drawing.Point(560, 51)
+        Me.Panel1.Location = New System.Drawing.Point(374, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(420, 297)
+        Me.Panel1.Size = New System.Drawing.Size(653, 417)
         Me.Panel1.TabIndex = 15
         '
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.Location = New System.Drawing.Point(156, 276)
+        Me.lblTotal.Location = New System.Drawing.Point(156, 397)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(43, 16)
         Me.lblTotal.TabIndex = 4
@@ -209,7 +209,7 @@ Partial Class frmUsuarios
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(16, 274)
+        Me.Label7.Location = New System.Drawing.Point(16, 398)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(144, 16)
         Me.Label7.TabIndex = 3
@@ -219,7 +219,7 @@ Partial Class frmUsuarios
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Lucida Sans", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(16, 20)
+        Me.Label6.Location = New System.Drawing.Point(234, 4)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(64, 19)
         Me.Label6.TabIndex = 2
@@ -227,7 +227,7 @@ Partial Class frmUsuarios
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(115, 19)
+        Me.txtBuscar.Location = New System.Drawing.Point(304, 3)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(298, 22)
         Me.txtBuscar.TabIndex = 1
@@ -238,19 +238,19 @@ Partial Class frmUsuarios
         Me.dgbUsuarios.AllowUserToDeleteRows = False
         Me.dgbUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_usuario, Me.nombre_completo, Me.USUARIO, Me.password, Me.tipo_usurio, Me.ESTADO})
-        Me.dgbUsuarios.Location = New System.Drawing.Point(20, 45)
+        Me.dgbUsuarios.Location = New System.Drawing.Point(20, 26)
         Me.dgbUsuarios.Name = "dgbUsuarios"
         Me.dgbUsuarios.ReadOnly = True
         Me.dgbUsuarios.RowHeadersVisible = False
         Me.dgbUsuarios.RowHeadersWidth = 51
         Me.dgbUsuarios.RowTemplate.Height = 24
         Me.dgbUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbUsuarios.Size = New System.Drawing.Size(393, 226)
+        Me.dgbUsuarios.Size = New System.Drawing.Size(584, 364)
         Me.dgbUsuarios.TabIndex = 0
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(16, 264)
+        Me.txtId.Location = New System.Drawing.Point(16, 407)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(75, 22)
         Me.txtId.TabIndex = 16
@@ -273,7 +273,7 @@ Partial Class frmUsuarios
         Me.nombre_completo.MinimumWidth = 6
         Me.nombre_completo.Name = "nombre_completo"
         Me.nombre_completo.ReadOnly = True
-        Me.nombre_completo.Width = 170
+        Me.nombre_completo.Width = 200
         '
         'USUARIO
         '
@@ -310,7 +310,6 @@ Partial Class frmUsuarios
         Me.ESTADO.MinimumWidth = 6
         Me.ESTADO.Name = "ESTADO"
         Me.ESTADO.ReadOnly = True
-        Me.ESTADO.Visible = False
         Me.ESTADO.Width = 70
         '
         'frmUsuarios
@@ -318,7 +317,7 @@ Partial Class frmUsuarios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.ClientSize = New System.Drawing.Size(1032, 386)
+        Me.ClientSize = New System.Drawing.Size(1074, 441)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnCancelar)

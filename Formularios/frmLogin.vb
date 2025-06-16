@@ -9,7 +9,7 @@ Public Class frmLogin
             Try
                 conexion.Open()
                 adaptador = New SqlDataAdapter("SELECT * FROM t_usuarios WHERE usuario = '" & UsernameTextBox.Text & "' AND password = '" & PasswordTextBox.Text & "'", conexion)
-                MsgBox("SELECT * FROM t_usuarios WHERE usuario = '" & UsernameTextBox.Text & "' AND password = '" & PasswordTextBox.Text & "'", vbExclamation, "Cadena SQl")
+
                 tabla.Clear()
                 adaptador.Fill(tabla)
                 If tabla.Rows.Count = 1 Then
